@@ -1,0 +1,193 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: black;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  width: 90%;
+  max-width: 1000px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2vh;
+}
+
+/* Image area */
+.image-container {
+  width: 100%;
+}
+
+.scene-image {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Text box */
+.text-box {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 3vh;
+    margin-top: 3vh;
+}
+
+.textbox-bg {
+  width: 100%;
+  height: auto;
+}
+
+.main-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 105%;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  color: #fff;
+}
+
+.title-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-weight: bold;
+  transform: translate(-50%, -50%);
+  width: 85%;
+  font-size: clamp(5rem, 2vw, 1.5rem);
+  color: #fff;
+}
+
+.zippy-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 85%;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  color: greenyellow;
+}
+
+
+
+
+/* Choices with dynamic borders */
+.choices {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5vh;
+  width: 50%;
+  max-width: 600px;
+  margin-top: 2.5%;
+}
+
+.choice {
+  display: block;
+  padding: .25em;
+  border: 3px solid #fff;
+  border-radius: 80px;
+  text-decoration: none;
+  font-size: clamp(1rem, 1.8vw, 1.4rem);
+  color: #fff;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.choice:hover {
+  border-color: rgb(0, 255, 0);
+  color: rgb(0, 255, 0);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Disabled state */
+.choice.disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+  border-color: rgba(255,255,255,0.08);
+}
+
+/* If a choice has a countdown, show badge */
+.choice .countdown {
+  margin-left: 12px;
+  padding: 6px 10px;
+  border-radius: 12px;
+  background: rgba(0,0,0,0.4);
+  font-size: 0.95rem;
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+/* small overlay for audio enable */
+.audio-hint {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(180deg, rgba(0,0,0,0.5), rgba(0,0,0,0.6));
+  z-index: 999;
+}
+
+.audio-hint.hidden { display: none; }
+
+/* status bar (optional, small) */
+.status-bar {
+  margin-top: 12px;
+  font-size: 0.85rem;
+  opacity: 0.7;
+  text-align: center;
+  width: 100%;
+}
+
+/* Blinking */
+
+    .blink {
+      animation: blink 1s steps(1) infinite; /* 1s duration, 1 step, infinite */
+      display: inline-block; /* Ensures the animation works correctly */
+    }
+
+    @keyframes blink {
+      0%, 15% { /* Start invisible */
+        opacity: 0;
+      }
+      16%, 100% { /* Become visible */
+        opacity: 1;
+      }
+    }
+
+    /* Title page container */
+.title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  gap: 5vh;
+}
+
+/* Title text */
+.site-title {
+  font-size: clamp(2rem, 20vw, 16rem);
+  font-weight: bold;
+  color: #fff;
+  /*text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);*/
+}
+
+/* Reuse choice button styles */
+.start-button {
+  width: 200px;
+  text-align: center;
+}

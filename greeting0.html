@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Branching Dialogue Engine</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Audio hint overlay if autoplay is blocked -->
+  <div id="audio-hint" class="audio-hint hidden">
+    <button id="enable-audio-btn" class="choice">Enable Audio</button>
+  </div>
+
+  <main class="container">
+    <!-- Scene image -->
+    <div class="image-container" id="image-container" aria-hidden="true">
+      <img id="scene-image" src="Egg.png" alt="" class="scene-image hidden" />
+    </div>
+
+    <!-- Text box -->
+    <div class="text-box" id="text-box" role="region" aria-live="polite">
+      <p id="dialogue-text" class="main-text">...</p>
+      <div id="scene-timer" class="scene-timer hidden"><!--Auto in: <span id="scene-timer-count">0</span>s--></div>
+    </div>
+
+    <!-- Choices -->
+    <div id="choices" class="choices" role="menu" aria-label="Choices"></div>
+
+    <!-- Small debug / status (optional) -->
+    <div class="status-bar" id="status-bar"></div>
+
+
+    <!-- Global timer -->
+    <div id="global-timer" style="font-weight:bold; margin:10px;">Global Timer: 10s</div>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
